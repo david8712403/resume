@@ -16,6 +16,20 @@ pnpm dev
 
 瀏覽 `http://localhost:3000`。
 
+## Docker（Host 3010）
+
+```bash
+docker compose up --build -d
+```
+
+啟動後瀏覽 `http://localhost:3010`。
+
+停止容器：
+
+```bash
+docker compose down
+```
+
 ## 可用指令
 
 ```bash
