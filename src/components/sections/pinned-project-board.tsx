@@ -63,7 +63,7 @@ export function PinnedProjectBoard() {
 
             <div className="relative z-10 mt-8">
               <CtaLink href="/projects/buildcare" variant="ghost">
-                查看 BuildCare 完整案例
+                查看建商 CRM × LINE 完整案例
               </CtaLink>
             </div>
           </article>

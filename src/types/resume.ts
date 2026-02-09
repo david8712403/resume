@@ -19,12 +19,18 @@ export interface ExperienceItem {
   location: string;
   bullets: string[];
   tags: string[];
+  workMode?: string;
+  impactNote?: string;
 }
 
 export interface EducationItem {
   school: string;
   degree: string;
   period: string;
+  thesisTitle?: string;
+  thesisAdvisor?: string;
+  thesisKeywords?: string[];
+  thesisSummary?: string;
 }
 
 export interface LinkItem {
@@ -65,6 +71,8 @@ export interface ProjectGalleryItem {
   alt: string;
   caption: string;
   ratioClass?: string;
+  aspectClass?: string;
+  fit?: "cover" | "contain";
 }
 
 export interface Project {
@@ -80,6 +88,11 @@ export interface Project {
   summary: string;
   motivation?: string;
   collaborationHighlight?: string;
+  ownershipLead?: string[];
+  ownershipCollab?: string[];
+  ownershipBoundaryNote?: string;
+  statusNote?: string;
+  scaleNote?: string;
   challenge: string;
   solution: string[];
   metrics: ProjectMetric[];

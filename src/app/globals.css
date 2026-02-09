@@ -123,11 +123,10 @@ a {
 
 .text-rise-target {
   opacity: 0;
-  transform: translate3d(0, 18px, 0);
+  transform: translate3d(0, 10px, 0);
   transition:
-    opacity 720ms cubic-bezier(0.2, 0.68, 0.22, 1) var(--text-rise-delay, 0ms),
-    transform 720ms cubic-bezier(0.2, 0.68, 0.22, 1) var(--text-rise-delay, 0ms);
-  will-change: opacity, transform;
+    opacity 380ms cubic-bezier(0.2, 0.68, 0.22, 1) var(--text-rise-delay, 0ms),
+    transform 380ms cubic-bezier(0.2, 0.68, 0.22, 1) var(--text-rise-delay, 0ms);
 }
 
 .text-rise-visible {

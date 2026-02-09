@@ -12,18 +12,9 @@ export function HomeHero() {
 
   return (
     <section id="about" className="relative overflow-hidden pt-32 pb-16 md:pt-40 md:pb-24">
-      <motion.div
+      <div
         aria-hidden
         className="pointer-events-none absolute -top-16 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-cyan-400/20 blur-3xl"
-        animate={
-          reduceMotion
-            ? undefined
-            : {
-                scale: [1, 1.12, 1],
-                opacity: [0.35, 0.6, 0.35],
-              }
-        }
-        transition={{ duration: 9, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
       />
 
       <div className="mx-auto grid w-full max-w-6xl gap-10 px-4 md:grid-cols-12 md:px-6">
@@ -32,7 +23,7 @@ export function HomeHero() {
             className="text-xs font-semibold uppercase tracking-[0.34em] text-cyan-300"
             initial={{ opacity: 0, y: reduceMotion ? 0 : 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.32 }}
           >
             Backend-first Fullstack Engineer
           </motion.p>
@@ -42,9 +33,9 @@ export function HomeHero() {
               <motion.span
                 key={part}
                 className="mr-4 inline-block"
-                initial={{ opacity: 0, y: reduceMotion ? 0 : 18 }}
+                initial={{ opacity: 0, y: reduceMotion ? 0 : 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.65, delay: index * 0.14, ease: [0.2, 0.65, 0.3, 0.9] }}
+                transition={{ duration: 0.36, delay: index * 0.05, ease: [0.2, 0.65, 0.3, 0.9] }}
               >
                 {part}
               </motion.span>
@@ -73,9 +64,9 @@ export function HomeHero() {
         <div className="md:col-span-5">
           <motion.div
             className="relative overflow-hidden rounded-3xl border border-cyan-300/20 bg-slate-900/70 p-6 shadow-[0_30px_80px_-45px_rgba(34,211,238,0.65)] backdrop-blur"
-            initial={{ opacity: 0, y: reduceMotion ? 0 : 24 }}
+            initial={{ opacity: 0, y: reduceMotion ? 0 : 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            transition={{ duration: 0.42, delay: 0.06 }}
           >
             <p className="text-xs uppercase tracking-[0.28em] text-cyan-300/90">Profile Signal</p>
             <dl className="mt-5 space-y-4">

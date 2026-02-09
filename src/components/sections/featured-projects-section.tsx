@@ -12,8 +12,8 @@ export function FeaturedProjectsSection() {
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <SectionTitle
               eyebrow="Projects"
-              title="三大實戰案例"
-              description="聚焦商業可用性、系統整合與可量化成果。"
+              title="精選實戰案例"
+              description="聚焦商業可用性、系統整合與可驗證成果。"
             />
             <CtaLink href="/projects" variant="ghost">
               進入專案總覽

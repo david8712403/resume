@@ -31,30 +31,36 @@ export function InteractiveEffects() {
       return;
     }
 
+    if (window.matchMedia("(pointer: coarse)").matches) {
+      return;
+    }
+
     const root = document.documentElement;
     let rafId = 0;
+    let framePending = false;
 
     let targetX = window.innerWidth / 2;
     let targetY = window.innerHeight / 2;
-    let currentX = targetX;
-    let currentY = targetY;
+
+    root.style.setProperty("--pointer-x", `${targetX}px`);
+    root.style.setProperty("--pointer-y", `${targetY}px`);
 
     const onPointerMove = (event: PointerEvent) => {
       targetX = event.clientX;
       targetY = event.clientY;
+
+      if (framePending) {
+        return;
+      }
+
+      framePending = true;
+      rafId = window.requestAnimationFrame(() => {
+        root.style.setProperty("--pointer-x", `${targetX}px`);
+        root.style.setProperty("--pointer-y", `${targetY}px`);
+        framePending = false;
+      });
     };
 
-    const animateGlow = () => {
-      currentX += (targetX - currentX) * 0.14;
-      currentY += (targetY - currentY) * 0.14;
-
-      root.style.setProperty("--pointer-x", `${currentX}px`);
-      root.style.setProperty("--pointer-y", `${currentY}px`);
-
-      rafId = window.requestAnimationFrame(animateGlow);
-    };
-
-    rafId = window.requestAnimationFrame(animateGlow);
     window.addEventListener("pointermove", onPointerMove, { passive: true });
 
     return () => {
@@ -77,7 +83,7 @@ export function InteractiveEffects() {
 
       const id = ++idCounterRef.current;
       const viewportRadius = Math.max(window.innerWidth, window.innerHeight);
-      const size = Math.max(220, Math.min(420, viewportRadius * 0.22));
+      const size = Math.max(180, Math.min(320, viewportRadius * 0.18));
 
       setRipples((prev) => [...prev.slice(-5), { id, x: event.clientX, y: event.clientY, size }]);
       setClickTexts((prev) => [...prev.slice(-5), { id, x: event.clientX, y: event.clientY }]);
@@ -104,15 +110,7 @@ export function InteractiveEffects() {
         className="absolute inset-0 transition-opacity duration-300"
         style={{
           background:
-            "radial-gradient(340px circle at var(--pointer-x, 50%) var(--pointer-y, 50%), rgba(196, 181, 253, 0.19), transparent 72%)",
-        }}
-      />
-      <div
-        className="absolute inset-0 opacity-80"
-        style={{
-          background:
-            "radial-gradient(220px circle at var(--pointer-x, 50%) var(--pointer-y, 50%), rgba(216, 180, 254, 0.2), transparent 72%)",
-          filter: "blur(16px)",
+            "radial-gradient(240px circle at var(--pointer-x, 50%) var(--pointer-y, 50%), rgba(216, 180, 254, 0.2), transparent 72%)",
         }}
       />
 

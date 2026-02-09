@@ -63,9 +63,16 @@ export function ExperienceSection() {
                           <p className="mt-1 text-sm text-cyan-200">{experience.company}</p>
                           <p className="mt-1 text-xs text-slate-400">{experience.location}</p>
                         </div>
-                        <span className="inline-flex rounded-full border border-cyan-300/25 bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-100">
-                          {experience.period}
-                        </span>
+                        <div className="flex flex-wrap gap-2 md:justify-end">
+                          <span className="inline-flex rounded-full border border-cyan-300/25 bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-100">
+                            {experience.period}
+                          </span>
+                          {experience.workMode ? (
+                            <span className="inline-flex rounded-full border border-slate-700 bg-slate-950/70 px-3 py-1 text-xs font-medium text-slate-300">
+                              {experience.workMode}
+                            </span>
+                          ) : null}
+                        </div>
                       </div>
 
                       <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-200">
@@ -87,6 +94,11 @@ export function ExperienceSection() {
                           </span>
                         ))}
                       </div>
+                      {experience.impactNote ? (
+                        <p className="mt-5 rounded-xl border border-slate-800 bg-slate-950/65 px-4 py-3 text-sm leading-7 text-slate-300">
+                          Scale &amp; Reliability（推估）：{experience.impactNote}
+                        </p>
+                      ) : null}
                     </div>
                   </article>
                 ))}
@@ -110,13 +122,25 @@ export function ExperienceSection() {
                         <h3 className="text-base font-semibold text-slate-100">
                           {experience.role}｜{experience.company}
                         </h3>
-                        <p className="text-sm text-slate-300">{experience.period}</p>
+                        <div className="flex flex-wrap gap-2">
+                          <p className="text-sm text-slate-300">{experience.period}</p>
+                          {experience.workMode ? (
+                            <span className="inline-flex rounded-full border border-slate-700 bg-slate-950/70 px-3 py-1 text-xs font-medium text-slate-400">
+                              {experience.workMode}
+                            </span>
+                          ) : null}
+                        </div>
                       </div>
                       <ul className="mt-3 space-y-2 text-sm leading-7 text-slate-300">
                         {experience.bullets.map((bullet) => (
                           <li key={bullet}>• {bullet}</li>
                         ))}
                       </ul>
+                      {experience.impactNote ? (
+                        <p className="mt-4 rounded-xl border border-slate-800 bg-slate-950/65 px-4 py-3 text-sm leading-7 text-slate-400">
+                          {experience.impactNote}
+                        </p>
+                      ) : null}
                     </div>
                   </article>
                 ))}
@@ -132,6 +156,23 @@ export function ExperienceSection() {
                 <p className="text-sm font-medium text-slate-100">{education.school}</p>
                 <p className="mt-1 text-sm text-slate-300">{education.degree}</p>
                 <p className="mt-1 text-xs text-slate-400">{education.period}</p>
+                {education.thesisTitle ? (
+                  <div className="mt-4 rounded-lg border border-cyan-300/20 bg-slate-950/65 p-3">
+                    <p className="text-xs uppercase tracking-[0.14em] text-cyan-200">論文 / 研究</p>
+                    <p className="mt-2 text-sm leading-6 text-slate-200">{education.thesisTitle}</p>
+                    {education.thesisAdvisor ? (
+                      <p className="mt-1 text-xs text-slate-400">指導教授：{education.thesisAdvisor}</p>
+                    ) : null}
+                    {education.thesisKeywords?.length ? (
+                      <p className="mt-1 text-xs text-slate-400">
+                        關鍵詞：{education.thesisKeywords.join(" / ")}
+                      </p>
+                    ) : null}
+                    {education.thesisSummary ? (
+                      <p className="mt-2 text-xs leading-6 text-slate-300">{education.thesisSummary}</p>
+                    ) : null}
+                  </div>
+                ) : null}
               </div>
             ))}
           </div>

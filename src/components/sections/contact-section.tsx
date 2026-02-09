@@ -11,11 +11,10 @@ export function ContactSection() {
             <div className="pointer-events-none absolute -right-12 -bottom-12 h-52 w-52 rounded-full bg-cyan-300/15 blur-3xl" />
             <p className="text-xs uppercase tracking-[0.28em] text-cyan-300">Contact</p>
             <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-100 md:text-4xl">
-              我正在尋找下一個能放大影響力的產品挑戰
+              正在尋找能將 LLM / RAG 落地為產品的 AI 工程師職位（其次為全端工程師）
             </h2>
             <p className="mt-5 max-w-3xl text-sm leading-7 text-slate-200 md:text-base">
-              若你正在尋找能獨立扛起系統、理解業務流程、並把 AI
-              轉為可交付成果的工程師，歡迎直接來信。
+              若你正在尋找能獨立設計後端架構、落地 RAG 工作流、整合跨系統資料流並穩定上線交付的工程師，歡迎直接來信。
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <CtaLink href={`mailto:${profile.email}`} external>

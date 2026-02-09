@@ -1,18 +1,21 @@
 import type { Project, ProjectSlug } from "@/types/resume";
 
 export const projectOrder: ProjectSlug[] = ["buildcare", "ayako", "cycle-path"];
+export const publicProjectOrder: ProjectSlug[] = ["buildcare", "ayako"];
 
 export const projects: Record<ProjectSlug, Project> = {
   buildcare: {
     slug: "buildcare",
-    title: "BuildCare",
-    subtitle: "建商 CRM × LINE 數位整合方案",
-    tagline: "以 LINE 作為屋主入口，打通工程進度、通知與售後報修流程。",
+    title: "建商 CRM × LINE LIFF 整合系統",
+    subtitle: "BuildCare（專案 SKU）",
+    tagline: "以 LINE 作為屋主入口，打通工程進度、通知與售後報修流程，聚焦真實案場試營運。",
     period: "2025/07 - 2026/02",
-    role: "獨立全端開發",
+    role: "獨立接案 / 全端工程師",
     theme: "CRM / LINE 生態整合",
     summary:
-      "BuildCare 是為建設公司打造的 B2B2C 系統，將預售屋長週期交付與售後報修流程數位化，提升透明度與客戶體驗。",
+      "建商 CRM × LINE LIFF 整合系統是為建設公司打造的 B2B2C 服務，將預售屋長週期交付與售後報修流程數位化，提升透明度與客戶體驗。",
+    statusNote: "單一建商實際導入，竹山大型案場（70+ 戶），目前為試營運階段。",
+    scaleNote: "基於保密協議，不揭露客戶名稱與細部營運數據。",
     challenge:
       "預售屋交屋週期長、資訊斷點多，屋主通常需依賴電話與人工聯繫追蹤進度，建商端也缺乏可追溯的集中化管理流程。",
     solution: [
@@ -23,19 +26,19 @@ export const projects: Record<ProjectSlug, Project> = {
     ],
     metrics: [
       {
-        label: "流程數位化",
-        value: "100%",
-        description: "報修與工程追蹤流程全面線上化",
+        label: "導入狀態",
+        value: "試營運中",
+        description: "單一建商實際使用中（1 建商）",
       },
       {
-        label: "通知機制",
-        value: "Real-time",
-        description: "重要施工節點自動推播至 LINE",
+        label: "案場規模",
+        value: "70+ 戶",
+        description: "竹山大型建案場域持續導入",
       },
       {
-        label: "入口成本",
-        value: "No App",
-        description: "屋主免下載 App，直接使用 LIFF",
+        label: "流程覆蓋",
+        value: "三大流程",
+        description: "工程進度、通知推播、報修管理全流程線上化",
       },
     ],
     techStack: [
@@ -93,9 +96,9 @@ export const projects: Record<ProjectSlug, Project> = {
       },
     ],
     achievements: [
-      "成功將複雜交屋流程轉為可追蹤的線上系統，降低資訊落差與溝通成本。",
-      "系統同時覆蓋屋主端與建商端流程，具備實際商業可用性。",
-      "可持續擴展至更多案型與售後服務場景。",
+      "已達成：將交屋與售後流程轉為可追蹤的線上系統，並完成單一建商試營運導入。",
+      "已達成：屋主端與建商端流程整合於同一套資料模型，減少電話與手動對單成本。",
+      "預期效果：隨案場持續使用，可進一步提升回報效率與資訊透明度，並擴展至更多案型場景。",
     ],
     gallery: [
       {
@@ -160,12 +163,23 @@ export const projects: Record<ProjectSlug, Project> = {
       "Ayako 是面向高端客製互動場景的 AI 虛擬人系統，角色可依情境展現多種情緒並進行自然對話。",
     collaborationHighlight:
       "專案以 Digitopia 參賽並榮獲 London Design Awards 與 MUSE Award 等國際獎項。",
+    ownershipLead: [
+      "負責 Ayako 角色專屬 RAG 知識庫建置與檢索策略，讓回應維持角色一致性。",
+      "設計對話 API 與 session state 流程，確保多輪互動在上下文中穩定運作。",
+      "主導 Socket.io 即時互動與串流通道整合，降低前後端互動延遲與狀態錯亂。",
+    ],
+    ownershipCollab: [
+      "與 Unreal 團隊協作事件/動作觸發接口，對齊語意與角色表演的同步時序。",
+      "與語音模組團隊協作 TTS 佇列與回饋機制，優化語音播放與回應銜接。",
+    ],
+    ownershipBoundaryNote:
+      "3D 建模與動畫內容由專責團隊負責；我負責系統整合、知識檢索與即時互動鏈路。",
     challenge:
       "要讓虛擬角色不只會回答問題，而是能貼合劇本人設、情境語氣與情緒變化，並維持低延遲的即時互動體驗。",
     solution: [
       "建置角色專屬知識庫，將編劇設定與對話素材透過 RAG 策略導入回應流程。",
-      "整合 Unreal Engine 3D 角色、LLM、語音生成與前端即時串流，建立多模組中樞協調層。",
-      "開發對話 UI 與 socket.io 互動通道，提升互動穩定度與沉浸感。",
+      "設計對話 API 與 session state，管理多輪上下文、情境切換與角色語氣一致性。",
+      "整合 socket.io 即時互動通道，並協作串接 Unreal 與語音模組以提升沉浸感。",
     ],
     metrics: [
       {
@@ -297,7 +311,7 @@ export const projects: Record<ProjectSlug, Project> = {
         href: "https://www.youtube.com/watch?v=dTkpQHFgVKI",
       },
     ],
-    nextSlug: "cycle-path",
+    nextSlug: "buildcare",
     coverImage: "/assets/ayako/ayako-cakeresume-01.png",
   },
   "cycle-path": {
@@ -401,41 +415,59 @@ export const projects: Record<ProjectSlug, Project> = {
         src: "/assets/cycle-path/cycle-cover.png",
         alt: "Cycle Path 專案封面",
         caption: "專案封面：綠輪騎跡主視覺",
-      },
-      {
-        src: "/assets/cycle-path/cycle-logo.jpeg",
-        alt: "Cycle Path 品牌 Logo",
-        caption: "品牌識別：綠輪騎跡 Logo",
+        ratioClass: "sm:col-span-2 lg:col-span-3",
+        aspectClass: "aspect-[16/7]",
+        fit: "cover",
       },
       {
         src: "/assets/cycle-path/cycle-mobile-01.png",
         alt: "Cycle Path 手機截圖一",
         caption: "手機介面：挑戰與活動流程",
+        aspectClass: "aspect-[9/19]",
+        fit: "contain",
       },
       {
         src: "/assets/cycle-path/cycle-mobile-02.png",
         alt: "Cycle Path 手機截圖二",
         caption: "手機介面：地圖與路線紀錄",
+        aspectClass: "aspect-[9/19]",
+        fit: "contain",
       },
       {
         src: "/assets/cycle-path/cycle-mobile-03.png",
         alt: "Cycle Path 手機截圖三",
         caption: "手機介面：個人騎乘與里程資訊",
+        aspectClass: "aspect-[9/19]",
+        fit: "contain",
       },
       {
         src: "/assets/cycle-path/cycle-event-01.jpeg",
         alt: "Cycle Path 活動照片一",
         caption: "活動紀錄：在地單車推廣現場",
+        aspectClass: "aspect-[4/3]",
+        fit: "cover",
       },
       {
         src: "/assets/cycle-path/cycle-event-02.jpeg",
         alt: "Cycle Path 活動照片二",
         caption: "活動紀錄：參與者集結與互動",
+        aspectClass: "aspect-[4/3]",
+        fit: "cover",
       },
       {
         src: "/assets/cycle-path/cycle-event-03.png",
         alt: "Cycle Path 活動照片三",
         caption: "活動紀錄：綠輪騎跡追風趣",
+        aspectClass: "aspect-[4/3]",
+        fit: "cover",
+      },
+      {
+        src: "/assets/cycle-path/cycle-logo.jpeg",
+        alt: "Cycle Path 品牌 Logo",
+        caption: "品牌識別：綠輪騎跡 Logo",
+        ratioClass: "sm:col-span-2 lg:col-span-3",
+        aspectClass: "aspect-[16/5]",
+        fit: "contain",
       },
     ],
     links: [
@@ -449,7 +481,7 @@ export const projects: Record<ProjectSlug, Project> = {
   },
 };
 
-export const allProjects = projectOrder.map((slug) => projects[slug]);
+export const allProjects = publicProjectOrder.map((slug) => projects[slug]);
 
 export const getProjectBySlug = (slug: string) => {
   if (slug in projects) {

@@ -11,6 +11,10 @@ interface ProjectDetailProps {
 
 export function ProjectDetail({ project }: ProjectDetailProps) {
   const nextProject = projects[project.nextSlug];
+  const hasOwnership =
+    Boolean(project.ownershipLead?.length) ||
+    Boolean(project.ownershipCollab?.length) ||
+    Boolean(project.ownershipBoundaryNote);
 
   return (
     <div className="pb-20 pt-28 md:pb-24 md:pt-36">
@@ -84,12 +88,60 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
           </div>
         </Reveal>
 
+        {hasOwnership ? (
+          <Reveal>
+            <SectionTitle
+              eyebrow="Ownership"
+              title="我的主責範圍"
+              description="區分主責與跨組協作邊界，確保角色定位清楚、可追問。"
+            />
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
+              {project.ownershipLead?.length ? (
+                <article className="rounded-2xl border border-cyan-300/20 bg-slate-900/60 p-5">
+                  <h3 className="text-base font-semibold text-slate-100">主責項目</h3>
+                  <ul className="mt-3 space-y-2 text-sm leading-7 text-slate-200">
+                    {project.ownershipLead.map((item) => (
+                      <li key={item}>• {item}</li>
+                    ))}
+                  </ul>
+                </article>
+              ) : null}
+
+              {project.ownershipCollab?.length ? (
+                <article className="rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
+                  <h3 className="text-base font-semibold text-slate-100">跨組協作</h3>
+                  <ul className="mt-3 space-y-2 text-sm leading-7 text-slate-300">
+                    {project.ownershipCollab.map((item) => (
+                      <li key={item}>• {item}</li>
+                    ))}
+                  </ul>
+                </article>
+              ) : null}
+            </div>
+            {project.ownershipBoundaryNote ? (
+              <p className="mt-4 rounded-xl border border-slate-800 bg-slate-950/65 px-4 py-3 text-sm leading-7 text-slate-300">
+                註記：{project.ownershipBoundaryNote}
+              </p>
+            ) : null}
+          </Reveal>
+        ) : null}
+
         <Reveal>
           <SectionTitle
             eyebrow="Project Metrics"
             title="成果指標"
             description="聚焦可觀測、可驗證的系統價值。"
           />
+          {project.statusNote ? (
+            <p className="mt-5 rounded-xl border border-cyan-300/25 bg-cyan-400/10 px-4 py-3 text-sm leading-7 text-cyan-100">
+              {project.statusNote}
+            </p>
+          ) : null}
+          {project.scaleNote ? (
+            <p className="mt-3 rounded-xl border border-slate-800 bg-slate-950/65 px-4 py-3 text-sm leading-7 text-slate-300">
+              {project.scaleNote}
+            </p>
+          ) : null}
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             {project.metrics.map((metric) => (
               <article key={metric.label} className="rounded-2xl border border-cyan-300/20 bg-slate-900/60 p-5">
@@ -159,12 +211,12 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
                 key={image.src}
                 className={`group overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60 ${image.ratioClass ?? ""}`}
               >
-                <div className="relative aspect-[16/10] overflow-hidden">
+                <div className={`relative overflow-hidden bg-slate-950/75 ${image.aspectClass ?? "aspect-[16/10]"}`}>
                   <Image
                     src={image.src}
                     alt={image.alt}
                     fill
-                    className="object-cover transition duration-500 group-hover:scale-105"
+                    className={`transition duration-500 ${image.fit === "contain" ? "object-contain p-2 md:p-3" : "object-cover group-hover:scale-105"}`}
                     sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                   />
                 </div>

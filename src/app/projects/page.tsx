@@ -6,7 +6,7 @@ import { SectionTitle } from "@/components/ui/section-title";
 
 export const metadata: Metadata = {
   title: "專案總覽 | David Chen",
-  description: "BuildCare、Ayako、Cycle Path 三大專案完整案例。",
+  description: "建商 CRM × LINE 與 Ayako 虛擬人等精選專案案例。",
 };
 
 export default function ProjectsPage() {
@@ -17,7 +17,7 @@ export default function ProjectsPage() {
           <SectionTitle
             eyebrow="Project Index"
             title="專案總覽"
-            description="涵蓋企業 CRM、AI 虛擬人與在地行動應用，聚焦上線實績與整合能力。"
+            description="聚焦企業 CRM 與 AI 虛擬人兩個代表案例，強調可追問的落地成果與整合能力。"
           />
         </Reveal>
 

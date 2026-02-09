@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "陳彥霖 David Chen | 後端導向全端工程師",
     description:
-      "BuildCare、Ayako、Cycle Path 三大案例。聚焦商業流程數位化、AI 系統整合與高可用服務設計。",
+      "聚焦建商 CRM × LINE 整合與 Ayako AI 虛擬人案例，強調可驗證的產品落地與系統整合能力。",
     images: [
       {
         url: "/og-cover.svg",
