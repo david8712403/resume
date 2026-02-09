@@ -3,6 +3,7 @@ import { ContactSection } from "@/components/sections/contact-section";
 import { ExperienceSection } from "@/components/sections/experience-section";
 import { FeaturedProjectsSection } from "@/components/sections/featured-projects-section";
 import { HomeHero } from "@/components/sections/home-hero";
+import { PinnedProjectBoard } from "@/components/sections/pinned-project-board";
 import { SkillsSection } from "@/components/sections/skills-section";
 
 export default function HomePage() {
@@ -11,6 +12,7 @@ export default function HomePage() {
       <HomeHero />
       <AboutSection />
       <SkillsSection />
+      <PinnedProjectBoard />
       <ExperienceSection />
       <FeaturedProjectsSection />
       <ContactSection />

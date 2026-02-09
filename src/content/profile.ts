@@ -36,8 +36,8 @@ export const profile: Profile = {
         "TypeScript",
         "Express",
         "Socket.io",
-        "NestJS（實務接觸）",
-        "Fastify（實務接觸）",
+        "NestJS",
+        "Fastify",
       ],
     },
     {
@@ -62,11 +62,17 @@ export const profile: Profile = {
     },
     {
       title: "前端 / 跨平台",
-      items: ["Nuxt.js", "Flutter", "React（實務接觸）", "Next.js（實務接觸）"],
+      items: ["Nuxt.js", "Flutter", "React", "Next.js"],
     },
     {
       title: "DevOps / 雲端",
-      items: ["AWS EC2/S3/Lambda", "Docker", "Jenkins CI/CD", "EFK 日誌監控"],
+      items: [
+        "AWS EC2/S3/Lambda",
+        "Docker",
+        "Jenkins CI/CD",
+        "EFK 日誌監控",
+        "Langfuse",
+      ],
     },
   ],
   coreExperience: [
@@ -135,14 +141,14 @@ export const profile: Profile = {
   desiredRoles: ["全端工程師", "後端工程師", "AI 工程師"],
   links: [
     {
-      label: "GitHub（可配置）",
-      href: "#",
-      placeholder: true,
+      label: "GitHub",
+      href: "https://github.com/david8712403",
+      icon: "github",
     },
     {
-      label: "LinkedIn（可配置）",
-      href: "#",
-      placeholder: true,
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/yanlin-david/",
+      icon: "linkedin",
     },
   ],
 };

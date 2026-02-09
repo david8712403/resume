@@ -151,6 +151,8 @@ export const projects: Record<ProjectSlug, Project> = {
     title: "Ayako",
     subtitle: "品牌專屬的情感 AI 虛擬人",
     tagline: "融合 Unreal Engine、RAG、語音與即時串流，打造具情緒層次的互動角色。",
+    videoEmbedUrl: "https://www.youtube.com/embed/dTkpQHFgVKI",
+    videoTitle: "Ayako AI 虛擬人展示影片",
     period: "2023 - 在職專案",
     role: "生成式 AI 系統整合工程師",
     theme: "AI 虛擬人 / 多模態互動",
@@ -236,11 +238,21 @@ export const projects: Record<ProjectSlug, Project> = {
       },
     ],
     achievements: [
-      "2024 London Design Awards（Service Design / Other）金獎。",
-      "2025 MUSE Award（Artificial Intelligence）銀獎。",
+      "2024 London Design Awards - Service Design / Other 類別，金獎（Gold Winner）。",
+      "2025 MUSE Award - Artificial Intelligence（AI）類別，銀獎（Silver Winner）。",
       "完成可上線的虛擬人整合流程，將 AI 能力轉為可體驗產品。",
     ],
     gallery: [
+      {
+        src: "/assets/ayako/ayako-cakeresume-01.png",
+        alt: "Ayako 專案實際展示畫面一",
+        caption: "Ayako 實際展示：角色與互動場景",
+      },
+      {
+        src: "/assets/ayako/ayako-cakeresume-02.png",
+        alt: "Ayako 專案實際展示畫面二",
+        caption: "Ayako 實際展示：多模態互動流程",
+      },
       {
         src: "/assets/ayako/ayako-hero.svg",
         alt: "Ayako 虛擬人展示主畫面示意",
@@ -273,12 +285,20 @@ export const projects: Record<ProjectSlug, Project> = {
         href: "https://www.cake.me/portfolios/ayako-ai",
       },
       {
+        label: "2024 London Design Awards 得獎頁",
+        href: "https://thelondondesignawards.com/winner-info.php?id=4128",
+      },
+      {
+        label: "2025 MUSE Award 得獎頁",
+        href: "https://design.museaward.com/winner-info.php?id=27378",
+      },
+      {
         label: "YouTube 影片",
         href: "https://www.youtube.com/watch?v=dTkpQHFgVKI",
       },
     ],
     nextSlug: "cycle-path",
-    coverImage: "/assets/ayako/ayako-hero.svg",
+    coverImage: "/assets/ayako/ayako-cakeresume-01.png",
   },
   "cycle-path": {
     slug: "cycle-path",
@@ -378,29 +398,44 @@ export const projects: Record<ProjectSlug, Project> = {
     ],
     gallery: [
       {
-        src: "/assets/cycle-path/cycle-hero.svg",
-        alt: "Cycle Path App 首頁示意",
-        caption: "首頁：活動入口與個人騎乘摘要",
+        src: "/assets/cycle-path/cycle-cover.png",
+        alt: "Cycle Path 專案封面",
+        caption: "專案封面：綠輪騎跡主視覺",
       },
       {
-        src: "/assets/cycle-path/cycle-route-map.svg",
-        alt: "Cycle Path 路線地圖與 GPS 軌跡示意",
-        caption: "地圖頁：GPS 軌跡與指定路線",
+        src: "/assets/cycle-path/cycle-logo.jpeg",
+        alt: "Cycle Path 品牌 Logo",
+        caption: "品牌識別：綠輪騎跡 Logo",
       },
       {
-        src: "/assets/cycle-path/cycle-challenge.svg",
-        alt: "Cycle Path 挑戰任務頁示意",
-        caption: "挑戰頁：任務完成狀態與打卡記錄",
+        src: "/assets/cycle-path/cycle-mobile-01.png",
+        alt: "Cycle Path 手機截圖一",
+        caption: "手機介面：挑戰與活動流程",
       },
       {
-        src: "/assets/cycle-path/cycle-event.svg",
-        alt: "Cycle Path 與竹山鎮公所合作活動示意",
-        caption: "在地合作：綠輪騎跡 追風趣活動",
+        src: "/assets/cycle-path/cycle-mobile-02.png",
+        alt: "Cycle Path 手機截圖二",
+        caption: "手機介面：地圖與路線紀錄",
       },
       {
-        src: "/assets/cycle-path/cycle-stats.svg",
-        alt: "Cycle Path 騎乘數據統計頁示意",
-        caption: "個人統計：距離、時間、里程目標",
+        src: "/assets/cycle-path/cycle-mobile-03.png",
+        alt: "Cycle Path 手機截圖三",
+        caption: "手機介面：個人騎乘與里程資訊",
+      },
+      {
+        src: "/assets/cycle-path/cycle-event-01.jpeg",
+        alt: "Cycle Path 活動照片一",
+        caption: "活動紀錄：在地單車推廣現場",
+      },
+      {
+        src: "/assets/cycle-path/cycle-event-02.jpeg",
+        alt: "Cycle Path 活動照片二",
+        caption: "活動紀錄：參與者集結與互動",
+      },
+      {
+        src: "/assets/cycle-path/cycle-event-03.png",
+        alt: "Cycle Path 活動照片三",
+        caption: "活動紀錄：綠輪騎跡追風趣",
       },
     ],
     links: [
@@ -410,7 +445,7 @@ export const projects: Record<ProjectSlug, Project> = {
       },
     ],
     nextSlug: "buildcare",
-    coverImage: "/assets/cycle-path/cycle-hero.svg",
+    coverImage: "/assets/cycle-path/cycle-cover.png",
   },
 };
 

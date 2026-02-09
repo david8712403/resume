@@ -1,6 +1,7 @@
 import { profile } from "@/content/profile";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionTitle } from "@/components/ui/section-title";
+import { SocialIcon } from "@/components/ui/social-icon";
 
 export function AboutSection() {
   return (
@@ -37,8 +38,11 @@ export function AboutSection() {
                       target={link.href.startsWith("http") ? "_blank" : undefined}
                       rel={link.href.startsWith("http") ? "noreferrer" : undefined}
                     >
-                      <span>{link.label}</span>
-                      {link.placeholder ? <span className="text-xs text-slate-400">待填</span> : null}
+                      <span className="inline-flex items-center gap-2">
+                        {link.icon ? <SocialIcon kind={link.icon} className="h-4 w-4 text-cyan-200" /> : null}
+                        {link.label}
+                      </span>
+                      <span className="text-xs text-cyan-300">↗</span>
                     </a>
                   </li>
                 ))}

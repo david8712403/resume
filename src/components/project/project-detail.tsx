@@ -133,8 +133,26 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
           </div>
         </Reveal>
 
+        {project.videoEmbedUrl ? (
+          <Reveal>
+            <SectionTitle eyebrow="Demo Video" title="影片展示" />
+            <div className="mt-6 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60 p-3 md:p-4">
+              <div className="relative aspect-video overflow-hidden rounded-xl border border-cyan-300/20 bg-slate-950/70">
+                <iframe
+                  src={project.videoEmbedUrl}
+                  title={project.videoTitle ?? `${project.title} 影片展示`}
+                  className="h-full w-full"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          </Reveal>
+        ) : null}
+
         <Reveal>
-          <SectionTitle eyebrow="Gallery" title="畫面展示" description="目前使用暫存示意圖，後續可同檔名替換正式素材。" />
+          <SectionTitle eyebrow="Gallery" title="畫面展示" description="專案截圖、活動紀錄與實際媒體素材。" />
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {project.gallery.map((image) => (
               <figure

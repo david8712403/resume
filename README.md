@@ -30,6 +30,12 @@ docker compose up --build -d
 docker compose down
 ```
 
+全站文字目前採用「由下往上緩緩顯示」效果，並移除打字機顯示特效。若有更新效果設定，重新建置即可生效：
+
+```bash
+docker compose up --build -d
+```
+
 ## 可用指令
 
 ```bash
@@ -58,7 +64,7 @@ pnpm start
 
 ## 素材替換規則
 
-目前所有專案圖皆為 placeholder。後續更新正式圖片時，請「覆蓋同檔名」即可，不需改程式碼。
+目前 BuildCare 多數仍為 placeholder；Ayako 與 Cycle Path 已整合實際素材。後續更新圖片可直接覆蓋同檔名，不需改程式碼。
 
 ### BuildCare
 
@@ -72,6 +78,8 @@ pnpm start
 
 ### Ayako
 
+- `public/assets/ayako/ayako-cakeresume-01.png`
+- `public/assets/ayako/ayako-cakeresume-02.png`
 - `public/assets/ayako/ayako-hero.svg`
 - `public/assets/ayako/ayako-dialogue.svg`
 - `public/assets/ayako/ayako-emotion.svg`
@@ -80,11 +88,14 @@ pnpm start
 
 ### Cycle Path
 
-- `public/assets/cycle-path/cycle-hero.svg`
-- `public/assets/cycle-path/cycle-route-map.svg`
-- `public/assets/cycle-path/cycle-challenge.svg`
-- `public/assets/cycle-path/cycle-event.svg`
-- `public/assets/cycle-path/cycle-stats.svg`
+- `public/assets/cycle-path/cycle-cover.png`
+- `public/assets/cycle-path/cycle-logo.jpeg`
+- `public/assets/cycle-path/cycle-mobile-01.png`
+- `public/assets/cycle-path/cycle-mobile-02.png`
+- `public/assets/cycle-path/cycle-mobile-03.png`
+- `public/assets/cycle-path/cycle-event-01.jpeg`
+- `public/assets/cycle-path/cycle-event-02.jpeg`
+- `public/assets/cycle-path/cycle-event-03.png`
 
 ### OG 圖
 

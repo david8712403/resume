@@ -31,6 +31,7 @@ export interface LinkItem {
   label: string;
   href: string;
   placeholder?: boolean;
+  icon?: "github" | "linkedin" | "email";
 }
 
 export interface Profile {
@@ -71,6 +72,8 @@ export interface Project {
   title: string;
   subtitle: string;
   tagline: string;
+  videoEmbedUrl?: string;
+  videoTitle?: string;
   period: string;
   role: string;
   theme: string;
